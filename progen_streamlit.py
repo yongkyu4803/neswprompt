@@ -386,13 +386,33 @@ if st.session_state.parsed_data:
     # 변환 버튼들
     col1, col2 = st.columns(2)
     with col1:
+        st.markdown("""
+        <style>
+        div[data-testid="stButton"] button {
+            background-color: #FFF9C4;
+            color: #333333;
+            width: 100%;
+            font-weight: bold;
+        }
+        </style>
+        """, unsafe_allow_html=True)
         if st.button("SNS 형식으로 변환", key="format_sns", 
-                    type="primary", help="클릭하면 SNS에 게시할 수 있는 형식으로 변환합니다"):
+                    help="클릭하면 SNS에 게시할 수 있는 형식으로 변환합니다"):
             st.session_state.sns_format = format_for_sns(st.session_state.parsed_data)
     
     with col2:
+        st.markdown("""
+        <style>
+        div[data-testid="stButton"] + div[data-testid="stButton"] button {
+            background-color: #FFCC80;
+            color: #333333;
+            width: 100%;
+            font-weight: bold;
+        }
+        </style>
+        """, unsafe_allow_html=True)
         if st.button("구글시트 형식으로 변환", key="format_sheet", 
-                   type="secondary", help="클릭하면 스프레드시트에 붙여넣을 수 있는 형식으로 변환합니다"):
+                   help="클릭하면 스프레드시트에 붙여넣을 수 있는 형식으로 변환합니다"):
             st.session_state.sheet_format = format_for_sheet(st.session_state.parsed_data)
     
     # SNS 형식 표시 및 복사 기능
@@ -427,15 +447,27 @@ if st.session_state.parsed_data:
     
     # 결과 카드 표시
     st.markdown("### 뉴스 항목")
+    
+    # 토글 제목 스타일 적용
+    st.markdown("""
+    <style>
+    .streamlit-expanderHeader {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+    }
+    .streamlit-expanderContent {
+        font-size: 0.85em !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     for i, item in enumerate(st.session_state.parsed_data):
         expander_title = f"{i+1}. {item.get('title', '제목 없음')}"
         with st.expander(expander_title, expanded=i==0):
-            st.markdown("<div style='font-size: 0.9em;'>", unsafe_allow_html=True)
             st.markdown(f"**언론사:** {item.get('media', '-')} | **발행일:** {item.get('pubDate', '-')}")
             st.markdown(f"**링크:** [{item.get('link', '-')}]({item.get('link', '#')})")
             st.markdown(f"**한 문장 요약:** {item.get('one_sentence_summary', '-')}")
             st.markdown(f"**요약:** {item.get('summary', '-')}")
-            st.markdown("</div>", unsafe_allow_html=True)
             
             # 개별 뉴스 항목 복사 버튼
             item_json = json.dumps(item, ensure_ascii=False, indent=2)
