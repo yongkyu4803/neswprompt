@@ -90,6 +90,10 @@ def get_copy_button_html(text, button_text="📋 복사"):
 # CSS 스타일 적용
 st.markdown("""
 <style>
+    /* 전체 줄간격 80% 적용 */
+    html, body {
+        line-height: 0.8;
+    }
     .main-header {
         font-size: 2.2em;
         font-weight: bold;
@@ -391,6 +395,7 @@ if st.session_state.parsed_data:
     <style>
     /* 버튼 컨테이너를 꽉 채우고 간격 없애기 */
     div[data-testid="column"] {
+        margin: 0 !important;
         padding: 0 !important;
         display: flex !important;
         flex-direction: column !important;
@@ -511,4 +516,4 @@ st.markdown("""
 <div class="footer">
     © 2025 뉴스 요약 프롬프트 생성기 - Made by GQ 💡
 </div>
-""", unsafe_allow_html=True) 
+""", unsafe_allow_html=True)
