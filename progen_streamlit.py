@@ -442,11 +442,9 @@ if st.session_state.parsed_data:
         
         # SNS 포맷 복사 버튼
         st.markdown(get_copy_button_html(st.session_state.sns_format, "📋 SNS 포맷 복사"), unsafe_allow_html=True)
-        st.markdown("</div>", unsafe_allow_html=True)
-    
+        
     # 구글시트 형식 표시 및 복사 기능
     if 'sheet_format' in st.session_state:
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown("<div class='card-header'>구글시트용 포맷</div>", unsafe_allow_html=True)
         st.dataframe(st.session_state.sheet_format)
         
