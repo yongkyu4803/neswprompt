@@ -421,7 +421,7 @@ if st.session_state.parsed_data:
     """, unsafe_allow_html=True)
     
     with col1:
-        if st.button("SNS 형식으로 변환", key="format_sns", 
+        if st.button("클릭하면 SNS에 게시할 수 있는 형식으로 변환합니다", key="format_sns", 
                     help="클릭하면 SNS에 게시할 수 있는 형식으로 변환합니다"):
             st.session_state.sns_format = format_for_sns(st.session_state.parsed_data)
     
