@@ -142,14 +142,14 @@ st.markdown("""
     .usage-guide h3 {
         margin-top: 0;
         color: #0c63e4;
-        font-size: 1.1em;
+        font-size: 1em;
     }
     .usage-guide ol {
         margin-bottom: 0;
         padding-left: 1.5em;
     }
     .usage-guide li {
-        margin-bottom: 0.3em;
+        margin-bottom: 0.2em;
     }
     /* 모바일 최적화 스타일 */
     .stButton>button {
@@ -169,10 +169,10 @@ st.markdown("""
 <div class="usage-guide">
     <h3>🔍 사용 방법</h3>
     <ol>
-        <li>필요사항을 입력하고 프롬프트를 생성합니다.</li>
+        <li>검색주제 등 필요사항을 입력하고 프롬프트를 생성합니다.</li>
         <li>생성한 프롬프트를 생성형 AI에 넣고 실행합니다.</li>
         <li>실행된 결과를 복사해서 JSON 입력창에 넣습니다.</li>
-        <li>결과를 생성하고 필요한대로 사용합니다.</li>
+        <li>결과를 생성하고 SNS, 스프레드 시트에 저장하면 됩니다.</li>
     </ol>
 </div>
 """, unsafe_allow_html=True)
