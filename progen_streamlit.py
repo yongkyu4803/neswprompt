@@ -386,25 +386,31 @@ if st.session_state.parsed_data:
     # 변환 버튼들
     col1, col2 = st.columns(2)
     
-    # 버튼 컨테이너 스타일 적용 (flex와 max-width 속성 사용)
+    # 버튼 컨테이너 및 버튼 자체의 CSS 수정 (텍스트 길이에 영향받지 않고 50% 영역 채우기)
     st.markdown("""
     <style>
-    /* 버튼 컨테이너: 각 컬럼을 flex로 50%로 지정 */
+    /* 각 컬럼을 50% 영역으로 지정 */
     div[data-testid="column"] {
         margin: 0 !important;
         padding: 0 !important;
-        flex: 1 !important;
+        flex: 1 1 50% !important;
         max-width: 50% !important;
+        min-width: 0 !important;
     }
-    /* 버튼 기본 스타일: 여백 제거 */
+    /* 버튼 컨테이너의 여백 제거 */
     div[data-testid="stButton"] {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
     }
-    /* 버튼 내부 요소 */
+    /* 버튼 자체: 고정 최소 높이, 줄바꿈 방지 및 말줄임 처리 */
     div[data-testid="stButton"] button {
         width: 100% !important;
+        min-height: 50px !important;
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
         margin: 0 !important;
     }
     /* SNS 버튼 스타일 */
