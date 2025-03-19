@@ -356,7 +356,7 @@ if st.session_state.parsed_data:
     st.markdown("<div class='section-header'>4. 결과 보기</div>", unsafe_allow_html=True)
     
     # SNS용 및 구글시트용 변환 기능
-    st.markdown("### 데이터 변환")
+    st.markdown("##### 데이터 변환")
     
     # SNS용 복사 포맷 함수
     def format_for_sns(data):
@@ -426,7 +426,7 @@ if st.session_state.parsed_data:
         st.markdown("</div>", unsafe_allow_html=True)
     
     # 결과 카드 표시
-    st.markdown("### 뉴스 항목")
+    st.markdown("##### 뉴스 항목")
     for i, item in enumerate(st.session_state.parsed_data):
         with st.expander(f"{i+1}. {item.get('title', '제목 없음')}", expanded=i==0):
             st.markdown(f"**언론사:** {item.get('media', '-')} | **발행일:** {item.get('pubDate', '-')}")
