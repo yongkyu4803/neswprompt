@@ -87,13 +87,9 @@ def get_copy_button_html(text, button_text="📋 복사"):
     # iframe 사용하여 HTML 데이터 URL 불러오기
     return f'<iframe src="data:text/html;base64,{encoded_html}" height="50" width="100%" frameBorder="0" scrolling="no"></iframe>'
 
-# CSS 스타일 적용
+# CSS 스타일 적용 (줄간격은 기본값 유지)
 st.markdown("""
 <style>
-    /* 전체 줄간격 80% 적용 */
-    html, body {
-        line-height: 0.8;
-    }
     .main-header {
         font-size: 2.2em;
         font-weight: bold;
@@ -390,37 +386,33 @@ if st.session_state.parsed_data:
     # 변환 버튼들
     col1, col2 = st.columns(2)
     
-    # 버튼 컨테이너 스타일 적용
+    # 버튼 컨테이너 스타일 적용 (flex와 max-width 속성 사용)
     st.markdown("""
     <style>
-    /* 버튼 컨테이너를 꽉 채우고 간격 없애기 */
+    /* 버튼 컨테이너: 각 컬럼을 flex로 50%로 지정 */
     div[data-testid="column"] {
         margin: 0 !important;
         padding: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        width: 50% !important;
+        flex: 1 !important;
+        max-width: 50% !important;
     }
-    
-    /* 모든 버튼에 대한 기본 스타일 - 너비 100% */
+    /* 버튼 기본 스타일: 여백 제거 */
     div[data-testid="stButton"] {
         width: 100% !important;
-        padding: 0 2px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
-    
-    /* 모든 버튼 요소에 대한 스타일 */
+    /* 버튼 내부 요소 */
     div[data-testid="stButton"] button {
         width: 100% !important;
-        font-weight: bold !important;
+        margin: 0 !important;
     }
-    
-    /* SNS 버튼 특정 스타일 */
+    /* SNS 버튼 스타일 */
     div[data-testid="stButton"]:first-child button {
         background-color: #FFFDE7 !important;
         color: #333333 !important;
     }
-    
-    /* 구글시트 버튼 특정 스타일 */
+    /* 구글시트 버튼 스타일 */
     div[data-testid="stButton"]:nth-child(2) button {
         background-color: #FFF3E0 !important;
         color: #333333 !important;
