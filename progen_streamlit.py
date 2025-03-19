@@ -389,7 +389,7 @@ if st.session_state.parsed_data:
         st.markdown("""
         <style>
         div[data-testid="stButton"] button {
-            background-color: #FFF9C4;
+            background-color: #FFFDE7;
             color: #333333;
             width: 100%;
             font-weight: bold;
@@ -404,7 +404,7 @@ if st.session_state.parsed_data:
         st.markdown("""
         <style>
         div[data-testid="stButton"] + div[data-testid="stButton"] button {
-            background-color: #FFCC80;
+            background-color: #FFF3E0;
             color: #333333;
             width: 100%;
             font-weight: bold;
