@@ -91,7 +91,7 @@ def get_copy_button_html(text, button_text="📋 복사"):
 st.markdown("""
 <style>
     .main-header {
-        font-size: 1.8em;
+        font-size: 2.2em;
         font-weight: bold;
         margin-bottom: 0.8em;
         text-align: center;
@@ -118,7 +118,6 @@ st.markdown("""
         border-radius: 5px;
         padding: 1em;
         margin-bottom: 0.8em;
-        background-color: #f8f9fa;
     }
     .card-header {
         font-weight: bold;
@@ -133,11 +132,12 @@ st.markdown("""
     }
     /* 사용법 안내 스타일 */
     .usage-guide {
-        background-color: #e7f3fe;
         border-left: 5px solid #2196F3;
         padding: 0.8em;
         margin-bottom: 1.5em;
         border-radius: 0 4px 4px 0;
+        border: 1px solid #2196F3;
+        border-left-width: 5px;
     }
     .usage-guide h3 {
         margin-top: 0;
