@@ -448,6 +448,24 @@ if st.session_state.parsed_data:
     # 토글 제목 스타일 적용
     st.markdown("""
     <style>
+    div.st-emotion-cache-1l269u5 > label {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+    }
+    div.st-emotion-cache-1nzw9oi p {
+        font-size: 0.85em !important;
+    }
+    
+    /* 폴백 스타일 - 배포 환경에서 클래스가 다를 경우 대비 */
+    .streamlit-expanderHeader {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+    }
+    .streamlit-expanderContent {
+        font-size: 0.85em !important;
+    }
+    
+    /* details/summary 기반 선택자 - 일부 환경에서 작동 */
     details > summary {
         font-size: 1.2em !important;
         font-weight: bold !important;
