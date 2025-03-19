@@ -361,7 +361,6 @@ if st.session_state.parsed_data:
                  help="클릭하면 스프레드시트에 붙여넣을 수 있는 형식으로 변환합니다"):
         st.session_state.sheet_format = format_for_sheet(st.session_state.parsed_data)
     if 'sheet_format' in st.session_state:
-        st.markdown("<div class='card-header'>구글시트용 포맷</div>", unsafe_allow_html=True)
         st.dataframe(st.session_state.sheet_format)
         csv = st.session_state.sheet_format.to_csv(index=False).encode('utf-8')
         st.download_button(
