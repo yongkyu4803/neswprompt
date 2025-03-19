@@ -335,7 +335,7 @@ st.markdown("<div class='section-header'>3. 결과(JSON형식) 입력 및 생성
 # 기본 샘플 데이터 제공
 default_json = json.dumps(sample_data, indent=2, ensure_ascii=False)
 st.markdown("아래 항목은 샘플입니다. **전체선택+삭제** 후, 생성형 AI에서 가져온 JSON 데이터를 붙여넣으세요.", unsafe_allow_html=True)
-st.markdown("아래 항목은 샘플입니다. **전체선택+삭제** 후, 생성형 AI에서 가져온 JSON 데이터를 붙여넣으세요.", unsafe_allow_html=True)
+st.markdown("입력후 아래 버튼을 눌러야 결과를 확인할 수 있습니다.", unsafe_allow_html=True)
 json_input = st.text_area("", value=default_json, height=300)
 st.markdown("</div>", unsafe_allow_html=True)
 
