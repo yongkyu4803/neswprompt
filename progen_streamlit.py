@@ -91,7 +91,7 @@ def get_copy_button_html(text, button_text="📋 복사"):
 st.markdown("""
 <style>
     .main-header {
-        font-size: 2.2em;
+        font-size: 1.8em;
         font-weight: bold;
         margin-bottom: 0.8em;
         text-align: center;
