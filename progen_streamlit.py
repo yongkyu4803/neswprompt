@@ -385,32 +385,50 @@ if st.session_state.parsed_data:
     
     # 변환 버튼들
     col1, col2 = st.columns(2)
+    
+    # 버튼 컨테이너 스타일 적용
+    st.markdown("""
+    <style>
+    /* 버튼 컨테이너를 꽉 채우고 간격 없애기 */
+    div[data-testid="column"] {
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 50% !important;
+    }
+    
+    /* 모든 버튼에 대한 기본 스타일 - 너비 100% */
+    div[data-testid="stButton"] {
+        width: 100% !important;
+        padding: 0 2px !important;
+    }
+    
+    /* 모든 버튼 요소에 대한 스타일 */
+    div[data-testid="stButton"] button {
+        width: 100% !important;
+        font-weight: bold !important;
+    }
+    
+    /* SNS 버튼 특정 스타일 */
+    div[data-testid="stButton"]:first-child button {
+        background-color: #FFFDE7 !important;
+        color: #333333 !important;
+    }
+    
+    /* 구글시트 버튼 특정 스타일 */
+    div[data-testid="stButton"]:nth-child(2) button {
+        background-color: #FFF3E0 !important;
+        color: #333333 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     with col1:
-        st.markdown("""
-        <style>
-        div[data-testid="stButton"] button {
-            background-color: #FFFDE7;
-            color: #333333;
-            width: 100%;
-            font-weight: bold;
-        }
-        </style>
-        """, unsafe_allow_html=True)
         if st.button("SNS 형식으로 변환", key="format_sns", 
                     help="클릭하면 SNS에 게시할 수 있는 형식으로 변환합니다"):
             st.session_state.sns_format = format_for_sns(st.session_state.parsed_data)
     
     with col2:
-        st.markdown("""
-        <style>
-        div[data-testid="stButton"] + div[data-testid="stButton"] button {
-            background-color: #FFF3E0;
-            color: #333333;
-            width: 100%;
-            font-weight: bold;
-        }
-        </style>
-        """, unsafe_allow_html=True)
         if st.button("구글시트 형식으로 변환", key="format_sheet", 
                    help="클릭하면 스프레드시트에 붙여넣을 수 있는 형식으로 변환합니다"):
             st.session_state.sheet_format = format_for_sheet(st.session_state.parsed_data)
