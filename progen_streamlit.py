@@ -445,17 +445,14 @@ if st.session_state.parsed_data:
         st.markdown(get_copy_button_html(sheet_csv, "📋 CSV 데이터 복사"), unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
     
-    # 결과 카드 표시
-    st.markdown("### 뉴스 항목")
-    
     # 토글 제목 스타일 적용
     st.markdown("""
     <style>
-    .streamlit-expanderHeader {
+    details > summary {
         font-size: 1.2em !important;
         font-weight: bold !important;
     }
-    .streamlit-expanderContent {
+    details > div {
         font-size: 0.85em !important;
     }
     </style>
