@@ -60,4 +60,4 @@ streamlit run prompt_generator_streamlit.py
 1. GitHub에 코드를 업로드합니다.
 2. [Streamlit Sharing](https://streamlit.io/sharing)에 가입합니다.
 3. 새 앱을 생성하고 GitHub 저장소를 연결합니다.
-4. 메인 파일 경로를 `prompt_generator_streamlit.py`로 설정합니다. 
+4. 메인 파일 경로를 `progen_streamlit.py`로 설정합니다. 
