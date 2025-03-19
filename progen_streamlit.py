@@ -438,7 +438,6 @@ if st.session_state.parsed_data:
     
     # SNS 형식 표시 및 복사 기능
     if 'sns_format' in st.session_state:
-        st.markdown("<div class='card-header'>SNS용 포맷</div>", unsafe_allow_html=True)
         st.text_area("", st.session_state.sns_format, height=200, key="sns_text")
         
         # SNS 포맷 복사 버튼
