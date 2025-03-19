@@ -424,12 +424,15 @@ if st.session_state.parsed_data:
         st.markdown("</div>", unsafe_allow_html=True)
     
     # 결과 카드 표시
+    st.markdown("### 뉴스 항목")
     for i, item in enumerate(st.session_state.parsed_data):
-        with st.expander(f"{i+1}. {item.get('title', '제목 없음')}", expanded=i==0):
+        with st.expander(f"<h3 style='font-size: 1.2em; margin: 0;'>{i+1}. {item.get('title', '제목 없음')}</h3>", expanded=i==0):
+            st.markdown("<div style='font-size: 0.9em;'>", unsafe_allow_html=True)
             st.markdown(f"**언론사:** {item.get('media', '-')} | **발행일:** {item.get('pubDate', '-')}")
             st.markdown(f"**링크:** [{item.get('link', '-')}]({item.get('link', '#')})")
             st.markdown(f"**한 문장 요약:** {item.get('one_sentence_summary', '-')}")
             st.markdown(f"**요약:** {item.get('summary', '-')}")
+            st.markdown("</div>", unsafe_allow_html=True)
             
             # 개별 뉴스 항목 복사 버튼
             item_json = json.dumps(item, ensure_ascii=False, indent=2)
